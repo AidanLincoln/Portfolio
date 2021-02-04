@@ -14,24 +14,24 @@ export default class App extends React.Component {
 
       function loadDone(x) {
         console.log("loader successfully completed loading task");
-        resolve(x); // it went ok!
-      
+        resolve(x); // it went ok!   
       }
-      // const manager = new THREE.LoadingManager(()=>resolve(textures));
+
       loader = new THREE.TextureLoader();
       loader.crossOrigin = "Anonymous"
-      // "https://i.postimg.cc/dQXDbxyL/planet-Texture.jpg"
-      // https://i.ibb.co/LP9DLD6/hDqdqi7.png
-      // 'https://i.ibb.co/M8Yk7Kc/wallpapersden-com-k-new-abstract-art-2560x1440.jpg'
-      // 'https://i.ibb.co/6tCsF3t/calvin-and-hobbes-background-hd-2560x1440-211373.jpg'
+
+      // const textureLink = "https://i.postimg.cc/dQXDbxyL/planet-Texture.jpg"
+      // const textureLink = 'https://i.ibb.co/LP9DLD6/hDqdqi7.png'
+      // const textureLink = 'https://i.ibb.co/M8Yk7Kc/wallpapersden-com-k-new-abstract-art-2560x1440.jpg'
+      // const textureLink = 'https://i.ibb.co/6tCsF3t/calvin-and-hobbes-background-hd-2560x1440-211373.jpg'
       const textureLink = 'https://i.ibb.co/dGLgQhN/cyber-futuristic-city-fantasy-art-4k-da-2560x1440.jpg'
-      loader.load(textureLink, loadDone)
-      
+
+      loader.load(textureLink, loadDone) 
     });
     
     getTextures().then(loadedTexture => {
       
-      material = new THREE.MeshBasicMaterial( { map: loadedTexture } )  
+      material = new THREE.MeshPhongMaterial( { map: loadedTexture } )  
       const scene = new THREE.Scene()
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
       camera.position.z = 15;
@@ -44,9 +44,18 @@ export default class App extends React.Component {
       
       const planet = new THREE.Mesh( geometry, material );
       scene.add( planet );
+      const ambientlLight = new THREE.AmbientLight(0xFFFFFF, 0.05);
+      scene.add(ambientlLight);
+      const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 0.95);
+      directionalLight.position.set(0, 10, 0);
+      directionalLight.target.position.set(-10, 0, -13);
+      scene.add(directionalLight);
+      scene.add(directionalLight.target);
 
       const animate = function () {
         requestAnimationFrame( animate );
+        // planet.rotation.x += 0.001;
+        planet.rotation.y += 0.001;
         renderer.render( scene, camera );
       }
       animate();
@@ -97,7 +106,7 @@ export default class App extends React.Component {
                   }
                 },
                 size: {
-                  value: 4,
+                  value: 3,
                   random: true,
                   anim: {
                     enable: false,
@@ -111,7 +120,7 @@ export default class App extends React.Component {
                 },
                 move: {
                   enable: true,
-                  speed: 0.25,
+                  speed: 0.2,
                   direction: "none",
                   random: true,
                   straight: false,
