@@ -1,7 +1,6 @@
 import React from 'react';
 import * as THREE from "three";
 import Particles from 'react-particles-js';
-// import { render } from "react-dom";
 import './App.css';
 
 export default class App extends React.Component {
@@ -18,8 +17,10 @@ export default class App extends React.Component {
       loader.crossOrigin = "Anonymous"
       const planetTextureLink = 'https://i.ibb.co/dGLgQhN/cyber-futuristic-city-fantasy-art-4k-da-2560x1440.jpg'
       const moonTextureLink = 'https://i.postimg.cc/dQXDbxyL/planet-Texture.jpg'
+      const subMoonTextureLink = 'https://i.ibb.co/ZWPpsqg/calvin-and-hobbes-background-hd-2560x1440-211373.jpg'
       textureArray.push(loader.load(planetTextureLink, loadDone))
       textureArray.push(loader.load(moonTextureLink, loadDone))
+      textureArray.push(loader.load(subMoonTextureLink, loadDone))
     });
     
     getTextures().then(textureArray => {
@@ -54,7 +55,7 @@ export default class App extends React.Component {
       const subMoonOrbit = new THREE.Object3D();
       subMoonOrbit.position.x = 2;
       moonOrbit.add(subMoonOrbit);
-      const subMoonMaterial = new THREE.MeshPhongMaterial( { map: textureArray[1] } );
+      const subMoonMaterial = new THREE.MeshPhongMaterial( { map: textureArray[2] } );
       const subMoonMesh = new THREE.Mesh(geometry, subMoonMaterial);
       subMoonMesh.scale.set(0.06, 0.06, 0.06);
       subMoonOrbit.add(subMoonMesh);
@@ -78,7 +79,6 @@ export default class App extends React.Component {
       }
       animate();
     })
-
   }
 
   render(){
