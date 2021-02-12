@@ -1,6 +1,7 @@
 import React from 'react';
 import * as THREE from "three";
 import Particles from 'react-particles-js';
+import Anime, {anime} from 'react-anime';
 import './App.css';
 
 export default class App extends React.Component {
@@ -17,7 +18,7 @@ export default class App extends React.Component {
       loader.crossOrigin = "Anonymous"
       const planetTextureLink = 'https://i.ibb.co/dGLgQhN/cyber-futuristic-city-fantasy-art-4k-da-2560x1440.jpg'
       const moonTextureLink = 'https://i.postimg.cc/dQXDbxyL/planet-Texture.jpg'
-      const subMoonTextureLink = 'https://i.ibb.co/ZWPpsqg/calvin-and-hobbes-background-hd-2560x1440-211373.jpg'
+      const subMoonTextureLink = 'https://i.postimg.cc/dQXDbxyL/planet-Texture.jpg'
       textureArray.push(loader.load(planetTextureLink, loadDone))
       textureArray.push(loader.load(moonTextureLink, loadDone))
       textureArray.push(loader.load(subMoonTextureLink, loadDone))
@@ -72,6 +73,7 @@ export default class App extends React.Component {
       //Animation
       const animate = function () {
         requestAnimationFrame( animate );
+
         planetSystem.rotation.y += 0.001;
         subMoonOrbit.rotation.y += 0.01;
         moonOrbit.rotation.y += 0.004;
@@ -152,6 +154,23 @@ export default class App extends React.Component {
               }
             }
           }}/> 
+          <Anime targets={['.homeTitle', '.letter']} translateX={[70,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2000} delay={(el, i) => 400 + 30 * i} >
+            <div class="homeTitle">
+              <span class="letter">A</span>
+              <span class="letter">i</span>
+              <span class="letter">d</span>
+              <span class="letter">a</span>
+              <span class="letter">n</span>
+              <span class="letter"> </span>
+              <span class="letter">L</span>
+              <span class="letter">i</span>
+              <span class="letter">n</span>
+              <span class="letter">c</span>
+              <span class="letter">o</span>
+              <span class="letter">l</span>
+              <span class="letter">n</span>
+            </div>
+          </Anime>
           <div id="planet"></div>
         </div>
     );
