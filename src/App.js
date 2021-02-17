@@ -36,6 +36,7 @@ export default class App extends React.Component {
       const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true}); 
       renderer.setClearColor( 0x000000, 0 );
       renderer.setSize( window.innerWidth, window.innerHeight ); document.getElementById("planet").appendChild( renderer.domElement );  
+      document.getElementById("planet").style.position = "relative"
 
       //Planet
       const material = new THREE.MeshPhongMaterial( { map: textureArray[0] } ) 
@@ -154,23 +155,37 @@ export default class App extends React.Component {
               }
             }
           }}/> 
-          <Anime targets={['.homeTitle', '.letter']} translateX={[70,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2000} delay={(el, i) => 400 + 30 * i} >
+          <Anime translateY={[-80,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2500} delay={300} >
             <div class="homeTitle">
-              <span class="letter">A</span>
-              <span class="letter">i</span>
-              <span class="letter">d</span>
-              <span class="letter">a</span>
-              <span class="letter">n</span>
-              <span class="letter"> </span>
-              <span class="letter">L</span>
-              <span class="letter">i</span>
-              <span class="letter">n</span>
-              <span class="letter">c</span>
-              <span class="letter">o</span>
-              <span class="letter">l</span>
-              <span class="letter">n</span>
+              <span class="title">Aidan Lincoln</span>
             </div>
           </Anime>
+
+          <div class="navContainer">
+            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={1500} >
+              <div class="homeLink">
+                <span class="navLink">Projects</span>
+              </div>
+            </Anime>
+
+            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={2500} >
+              <div class="homeLink">
+                <span class="navLink">Music</span>
+              </div>
+            </Anime>
+
+            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={3500} >
+              <div class="homeLink">
+                <span class="navLink">Visual Art</span>
+              </div>
+            </Anime>
+
+            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={4500} >
+              <div class="homeLink">
+                <span class="navLink">Contact</span>
+              </div>
+            </Anime>
+          </div>
           <div id="planet"></div>
         </div>
     );

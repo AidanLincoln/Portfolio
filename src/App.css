@@ -38,6 +38,7 @@ html, body, #root, .App {
 
 
 .homeTitle {
+  position: absolute;
   font-weight: 200;
   font-size: 2em;
   text-transform: uppercase;
@@ -47,8 +48,28 @@ html, body, #root, .App {
   padding-left: 1%;
 }
 
-.homeTitle .letter {
-  display: inline-block;
+.homeTitle .title {
   line-height: 1em;
   color: white;
+}
+
+.homeLink { 
+  font-weight: 200;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  z-index: 10;
+  margin-top: 5%;
+}
+
+.homeLink .navLink {
+  line-height: 1em;
+  color: white;
+}
+
+.navContainer {
+  position: absolute;
+  display: block;
+  padding-top: 5%;
+  padding-left: 1%;
 }
