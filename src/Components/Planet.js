@@ -2,10 +2,25 @@ import React from 'react';
 import * as THREE from "three";
 // import './App.css';
 
+const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
+
 export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    // this.handleResize = this.handleResize.bind(this)
+    
+     
+  }
+  handleResize = () => {
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize(window.innerWidth, window.innerHeight)
+  }
   
     componentDidMount(){
-  
+      window.addEventListener('resize', this.handleResize, false)
+
       const getTextures = () => new Promise((resolve, reject)=>{
         const textureArray = []
         function loadDone(x) {
@@ -27,14 +42,13 @@ export default class App extends React.Component {
         const scene = new THREE.Scene()
         const planetSystem = new THREE.Object3D();
         scene.add(planetSystem)
-        const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
+        // const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
         camera.position.z = 25;
   
         //Renderer
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true}); 
+        // const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true}); 
         renderer.setClearColor( 0x000000, 0 );
         renderer.setSize( window.innerWidth, window.innerHeight ); document.getElementById("planet").appendChild( renderer.domElement );  
-        // document.getElementById("planet").style.position = "relative"
   
         //Planet
         const material = new THREE.MeshPhongMaterial( { map: textureArray[0] } ) 
