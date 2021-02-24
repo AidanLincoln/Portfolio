@@ -1,11 +1,10 @@
 import React from 'react';
 import * as THREE from "three";
-// import './App.css';
 
 const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
 
-export default class App extends React.Component {
+export default class Planet extends React.Component {
   constructor(props) {
     super(props)
     // this.handleResize = this.handleResize.bind(this)
