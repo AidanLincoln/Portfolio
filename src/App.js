@@ -4,14 +4,20 @@ import React from 'react';
 import './App.css';
 import Planet from './Components/Planet';
 import Stars from './Components/Stars';
+import UploadWindow from './Components/UploadWindow';
 
 export default class App extends React.Component {
- 
+
   render(){
     return (
         <div className="App">
           <Stars></Stars>
+
           <Planet></Planet>
+
+          <UploadWindow></UploadWindow>
+
+          
           {/* <Anime translateY={[-80,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2500} delay={300} >
             <div class="homeTitle">
               <span class="title">Aidan Lincoln</span>

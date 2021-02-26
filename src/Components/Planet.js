@@ -5,12 +5,7 @@ const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
 
 export default class Planet extends React.Component {
-  constructor(props) {
-    super(props)
-    // this.handleResize = this.handleResize.bind(this)
-    
-     
-  }
+  
   handleResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()

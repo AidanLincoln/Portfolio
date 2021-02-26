@@ -73,5 +73,15 @@
 }
 
 #planet {
-  position: relative;
+  position: absolute;
+}
+
+.upload {
+  /* background-color: white; */
+  position: absolute;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-bottom: 1%;
+  padding-right: 1%;
+  overflow: hidden;
 }
