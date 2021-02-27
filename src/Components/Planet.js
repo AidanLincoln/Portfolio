@@ -1,11 +1,16 @@
 import React from 'react';
 import * as THREE from "three";
+import { throttle } from 'lodash'
 
 const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
 
 export default class Planet extends React.Component {
-  
+  constructor(props) {
+    super(props)
+    this.handleResize = throttle(this.handleResize.bind(this), 100)
+  }
+
   handleResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
@@ -87,6 +92,9 @@ export default class Planet extends React.Component {
         }
         animate();
       })
+    }
+    componentWillUnmount() {
+      window.removeEventListener('resize', this.handleResize);
     }
   
     render(){  
