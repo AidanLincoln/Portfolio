@@ -1,25 +1,7 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-// import { throttle } from 'lodash'
 
 export default class Stars extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.resize = throttle(this.resize.bind(this), 100)
-    // }
-
-    // resize = () => {
-    //     this.forceUpdate()
-    //     console.log("rerender")
-    // }
-
-    // componentDidMount() {
-    //     window.addEventListener('resize', this.resize)
-    // }
-
-    // componentWillUnmount() {
-    //     window.removeEventListener('resize', this.resize)
-    // }
 
     render(){
         return (
