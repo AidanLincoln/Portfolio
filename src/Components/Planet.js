@@ -24,7 +24,7 @@ export default class Planet extends React.Component {
         const textureArray = []
         function loadDone(x) {
           console.log("loader successfully completed loading task");
-          resolve(textureArray); // it went ok!   
+          resolve(textureArray); // it went ok 
         }
         const loader = new THREE.TextureLoader();
         loader.crossOrigin = "Anonymous"
@@ -41,11 +41,9 @@ export default class Planet extends React.Component {
         const scene = new THREE.Scene()
         const planetSystem = new THREE.Object3D();
         scene.add(planetSystem)
-        // const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
         camera.position.z = 25;
   
         //Renderer
-        // const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true}); 
         renderer.setClearColor( 0x000000, 0 );
         renderer.setSize( window.innerWidth, window.innerHeight ); document.getElementById("planet").appendChild( renderer.domElement );  
   

@@ -9,7 +9,7 @@ export default class Stars extends React.Component {
                 params={{
                     particles: {
                     number: {
-                        value: 200,
+                        value: 75,
                         density: {
                         enable: true,
                         value_area: 800
@@ -45,12 +45,12 @@ export default class Stars extends React.Component {
                         }
                     },
                     size: {
-                        value: 3,
+                        value: 2.5,
                         random: true,
                         anim: {
                         enable: false,
                         speed: 4,
-                        size_min: 0.2,
+                        size_min: 0.1,
                         sync: false
                         }
                     },
@@ -63,7 +63,7 @@ export default class Stars extends React.Component {
                         direction: "none",
                         random: true,
                         straight: false,
-                        out_mode: "destroy",
+                        out_mode: "out",
                         bounce: false,
                         attract: {
                         enable: false,

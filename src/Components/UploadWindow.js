@@ -30,8 +30,12 @@ export default class UploadWindow extends React.Component {
     render() {
         return (
             <div class="upload">
-                <input type="file" onChange={this.onFileChange} />
-                <button onClick={this.onFileUpload}> Upload </button>
+                <label class="btn">
+                    <input class="fileInput" type="file" onChange={this.onFileChange} />
+                    Choose File
+                </label>
+                
+                <button class="btn" onClick={this.onFileUpload}>Upload</button>
             </div>
         );
     } 
