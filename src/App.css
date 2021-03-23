@@ -51,25 +51,29 @@
   color: white;
 }
 
-.homeLink { 
+.descDiv { 
   font-weight: 200;
   font-size: 2em;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.4em;
   z-index: 10;
-  margin-top: 5%;
+  margin-bottom: 2%;
 }
 
-.homeLink .navLink {
+.descDiv .descText {
   line-height: 1em;
   color: white;
 }
 
-.navContainer {
+.descriptionContainer {
   position: absolute;
   display: block;
-  padding-top: 5%;
-  padding-left: 1%;
+  color: white;
+  background-color: black;
+  top: 0;
+  left: 0;
+  margin-top: 3%;
+  margin-left: 3%;
 }
 
 #planet {
@@ -92,4 +96,16 @@
   border: none;
   color: white;
   background-color: black;
+}
+
+.appDesc {
+  font-size: 48px;
+  width: 500px;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 3%;
+  margin-left: 3%;
 }

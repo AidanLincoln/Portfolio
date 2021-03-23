@@ -1,5 +1,5 @@
 import React from 'react';
-// import Anime, {anime} from 'react-anime';
+import Anime, {anime} from 'react-anime';
 
 import './App.css';
 import Planet from './Components/Planet';
@@ -15,40 +15,28 @@ export default class App extends React.Component {
 
           <Planet></Planet>
 
-          <UploadWindow></UploadWindow>
+          {/* <UploadWindow></UploadWindow> */}
 
-          
-          {/* <Anime translateY={[-80,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2500} delay={300} >
-            <div class="homeTitle">
-              <span class="title">Aidan Lincoln</span>
-            </div>
-          </Anime>
-
-          <div class="navContainer">
-            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={1500} >
-              <div class="homeLink">
-                <span class="navLink">Projects</span>
+          <div class="descriptionContainer">
+            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2000} delay={500} >
+              <div class="descDiv">
+                <span class="descText">Extract stems</span>
               </div>
             </Anime>
 
-            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={2500} >
-              <div class="homeLink">
-                <span class="navLink">Music</span>
+            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2000} delay={1500} >
+              <div class="descDiv">
+                <span class="descText">from any audio file</span>
               </div>
             </Anime>
 
-            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={3500} >
-              <div class="homeLink">
-                <span class="navLink">Visual Art</span>
+            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2000} delay={2500} >
+              <div class="descDiv">
+                <span class="descText">using artificial intelligence</span>
               </div>
             </Anime>
 
-            <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutElastic"} duration={1500} delay={4500} >
-              <div class="homeLink">
-                <span class="navLink">Contact</span>
-              </div>
-            </Anime>
-          </div> */}
+          </div>
         </div>
     );
   }
