@@ -62,7 +62,8 @@
 
 .descDiv .descText {
   line-height: 1em;
-  color: white;
+  /* color: #93faff; */
+  /* text-shadow: 0px 0px 8px #93faff, 0px 0px 4px #93faff; */
 }
 
 .descriptionContainer {
@@ -83,9 +84,10 @@
 .upload {
   /* background-color: white; */
   position: absolute;
-  padding-top: 5%;
-  padding-left: 5%;
-  overflow: hidden;
+  top: 0;
+  right: 0;
+  margin-top: 3%;
+  margin-right: 3%;
 }
 
 .fileInput {
@@ -96,6 +98,10 @@
   border: none;
   color: white;
   background-color: black;
+  font-weight: 200;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
 }
 
 .appDesc {

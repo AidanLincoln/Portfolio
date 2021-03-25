@@ -4,7 +4,7 @@ import Anime, {anime} from 'react-anime';
 import './App.css';
 import Planet from './Components/Planet';
 import Stars from './Components/Stars';
-import UploadWindow from './Components/UploadWindow';
+// import UploadWindow from './Components/UploadWindow';
 
 export default class App extends React.Component {
 
