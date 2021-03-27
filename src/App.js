@@ -4,7 +4,7 @@ import Anime, {anime} from 'react-anime';
 import './App.css';
 import Planet from './Components/Planet';
 import Stars from './Components/Stars';
-// import UploadWindow from './Components/UploadWindow';
+import UploadWindow from './Components/UploadWindow';
 
 export default class App extends React.Component {
 
@@ -15,7 +15,7 @@ export default class App extends React.Component {
 
           <Planet></Planet>
 
-          {/* <UploadWindow></UploadWindow> */}
+          <UploadWindow></UploadWindow>
 
           <div class="descriptionContainer">
             <Anime translateX={[-300,0]} opacity={[0,1]} easing={"easeOutExpo"} duration={2000} delay={500} >

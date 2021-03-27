@@ -94,14 +94,38 @@
   display: none;
 }
 
-.btn {
-  border: none;
-  color: white;
-  background-color: black;
-  font-weight: 200;
-  font-size: 2em;
+.fileBtn {
+  display: inline-block;
+  padding: 3px 15px;
+  border: 1px solid #00e0ff;
+  border-radius: 2px;
+  background: rgba(0, 224, 255, 0.1);
+  transform: skewX(-30deg);
+  box-shadow:
+    inset 0px 0 5px #0ff; /* right cyan */
+  transition: all 0.5s ease;
+}
+
+.fileBtnText {
+  display: inline-block;
+  color: #00e0ff;
+  font-weight: 100;
+  font-size: 1.5em;
   text-transform: uppercase;
   letter-spacing: 0.4em;
+  transform: skewX(30deg);
+  transition: all 0.5s ease;
+}
+
+.fileBtnText:hover {
+  color: black;
+  transition: all 0.5s ease;
+}
+.fileBtn:hover {
+  background: rgba(0, 224, 255, 1);
+  box-shadow:
+    inset 0px 0 20px black; /* right cyan */
+  transition: all 0.5s ease;
 }
 
 .appDesc {
