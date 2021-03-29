@@ -95,6 +95,7 @@
 }
 
 .fileBtn {
+  margin-right: 10px;
   display: inline-block;
   padding: 3px 15px;
   border: 1px solid #00e0ff;
@@ -114,6 +115,49 @@
   text-transform: uppercase;
   letter-spacing: 0.4em;
   transform: skewX(30deg);
+  transition: all 0.5s ease;
+}
+
+.uploadBtn {
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+
+  display: inline-block;
+  padding: 3px 15px;
+  border: 1px solid #00e0ff;
+  border-radius: 2px;
+  background: rgba(0, 224, 255, 0.1);
+  box-shadow:
+    inset 0px 0 5px #0ff; /* right cyan */
+  
+  transform: skewX(-30deg);
+  transition: all 0.5s ease;
+}
+
+.uploadBtnText {
+  display: inline-block;
+  color: #00e0ff;
+  font-weight: 100;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+
+  transform: skewX(30deg);
+  transition: all 0.5s ease;
+}
+
+.uploadBtnText:hover {
+  color: black;
+  transition: all 0.5s ease;
+}
+.uploadBtn:hover {
+  background: rgba(0, 224, 255, 1);
+  box-shadow:
+    inset 0px 0 20px black; /* right cyan */
   transition: all 0.5s ease;
 }
 

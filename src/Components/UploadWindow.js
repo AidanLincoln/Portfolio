@@ -37,7 +37,7 @@ export default class UploadWindow extends React.Component {
                     </label>
                 </label>
                 
-                {/* <button class="btn" onClick={this.onFileUpload}>Upload</button> */}
+                <button class="uploadBtn" onClick={this.onFileUpload}><div class="uploadBtnText">Upload</div></button>
             </div>
         );
     } 
