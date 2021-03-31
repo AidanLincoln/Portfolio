@@ -1,4 +1,5 @@
 import React from 'react';
+import Anime, {anime} from 'react-anime';
 // import axios, { post } from 'axios';
 
 export default class UploadWindow extends React.Component {
@@ -13,13 +14,13 @@ export default class UploadWindow extends React.Component {
     };
 
     onFileUpload = () => {
-        const formData = new FormData();
+        // const formData = new FormData();
     
-        formData.append(
-          "myFile",
-          this.state.uploadedFile,
-          this.state.uploadedFile.name
-        );
+        // formData.append(
+        //   "myFile",
+        //   this.state.uploadedFile,
+        //   this.state.uploadedFile.name
+        // );
       
         console.log(this.state.uploadedFile);
       
@@ -37,8 +38,17 @@ export default class UploadWindow extends React.Component {
                     </label>
                 </label>
                 
-                <button class="uploadBtn" onClick={this.onFileUpload}><div class="uploadBtnText">Upload</div></button>
+                <button class="uploadBtn" onClick={this.onFileUpload}><div class="uploadBtnText">Extract</div></button>
+
+                {!!this.state.uploadedFile ? 
+                <Anime translateY={[-50,0]} opacity={[0,1]} easing={"easeOutBounce"} duration={1000} delay={0} >
+                    <div class="fileName">
+                        {this.state.uploadedFile.name}
+                    </div>
+                </Anime> : null}
+
             </div>
+            
         );
     } 
 }
